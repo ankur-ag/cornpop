@@ -3,7 +3,9 @@
 angular.module('cornpopApp.controllers')
   .controller('MoviesController', ["$scope", '$routeParams', "MoviesService",
     function($scope, $routeParams, MoviesService) {
-      $scope.movies = MoviesService.movies();
+      MoviesService.movies().then(function(movies) {
+        $scope.movies = movies;
+      })
       $scope.addFavorite = function(movie) {
         movie.isFavorite = true;
       };
