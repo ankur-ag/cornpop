@@ -43,3 +43,7 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'angularjs-rails', "=1.2.6"
+gem 'bootstrap-sass-rails', "=3.0.3.0"
+gem 'underscore-rails'
