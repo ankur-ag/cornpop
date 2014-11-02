@@ -2,8 +2,10 @@
 
 angular.module('cornpopApp', [
     'ngRoute',
+    'ngCookies',
     'cornpopApp.controllers',
-    'cornpopApp.services'
+    'cornpopApp.services',
+    'cornpopApp.directives'
   ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -14,6 +16,16 @@ angular.module('cornpopApp', [
       .when('/', {
         templateUrl: '/templates/movies.html',
         controller: 'MoviesController'
+      })
+      .when('/login', 
+      {
+        templateUrl: '/templates/login.html', 
+        controller: 'LoginController'
+      })
+      .when('/user/:user_id', 
+      {
+        templateUrl: '/templates/profile.html', 
+        controller: 'ProfileController'
       })
       .otherwise({
         redirectTo: '/'
