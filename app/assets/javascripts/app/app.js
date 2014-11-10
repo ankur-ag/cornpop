@@ -5,7 +5,8 @@ angular.module('cornpopApp', [
     'ngCookies',
     'cornpopApp.controllers',
     'cornpopApp.services',
-    'cornpopApp.directives'
+    'cornpopApp.directives',
+    'cornpopApp.resources'
   ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -32,3 +33,7 @@ angular.module('cornpopApp', [
       });
     $locationProvider.html5Mode(true);
   })
+  .run(function($injector) {
+    window.Movie = $injector.get("Movie");
+    window.Favorite = $injector.get("Favorite");
+  });

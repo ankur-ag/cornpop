@@ -48,3 +48,5 @@ gem 'angularjs-rails', "=1.2.6"
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'underscore-rails'
+gem 'devise', "=3.2.2"
+gem 'angularjs-rails-resource', "=0.2.5"
