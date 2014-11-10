@@ -68,6 +68,7 @@ angular.module('cornpopApp.resources', ["rails"])
         }, function(err) {
           d.reject(err);
         });
+        return d.promise;
       };
 
       return resource;
