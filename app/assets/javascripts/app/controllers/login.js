@@ -1,24 +1,28 @@
 'use strict';
 
 angular.module('cornpopApp.controllers')
-.controller('LoginController',
-  function($scope, $location, UserService) {
-    $scope.signup = {};
-    $scope.login = {};
+  .controller('LoginController',
+    function($scope, $location, UserService) {
+      $scope.signup = {};
+      $scope.login = {};
 
-    $scope.submitSignup = function() {
-      UserService.login($scope.signup.email).then(function(user) {
-        console.log(user);
-        $scope.user = user;
-        $location.path("/");
-      });
-    };
+      $scope.submitSignup = function() {
+        UserService.signup($scope.signup).then(
+          function(user) {
+            $location.path("/");
+          },
+          function(reason) {
+            $scope.signup.errors = reason;
+          });
+      };
 
-    $scope.submitLogin = function() {
-      UserService.login($scope.login.email).then(function(user) {
-        console.log(user);
-        $scope.user = user;
-        $location.path("/");
-      });
-    };
-});
+      $scope.submitLogin = function() {
+        UserService.login($scope.login).then(
+          function(user) {
+            $location.path("/");
+          },
+          function(reason) {
+            $scope.login.errors = reason;
+          });
+      };
+    });
