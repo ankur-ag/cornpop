@@ -4,7 +4,6 @@ angular.module('cornpopApp.controllers')
   .controller('ProfileController', [
     '$scope', '$routeParams', 'User',
     function($scope, $routeParams, User) {
-
       User.query({
           id: $routeParams.user_id
         })

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :favorites
+  has_many :movies, :through => :favorites
 
   def ensure_authentication_token
     if authentication_token.blank?
